@@ -1,4 +1,4 @@
-import Express from 'express'
+import express from 'express'
 
 const server = express();
 const puerto = 2548;
@@ -6,7 +6,7 @@ const puerto = 2548;
 server.use(express.json());
 
 server.listen(puerto, () => {
-    console.log("hola");
+    console.log(`This is a server on the port ${puerto}`);
 })
 
 console.log(server);
