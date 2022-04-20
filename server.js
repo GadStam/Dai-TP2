@@ -1,14 +1,15 @@
-import express from 'express'
+import express from "express";
+import cors from "cors";
+import PizzaRouter from "./src/controllers/pizzaController.js";
 
-const server = express.Router();
-const puerto = 2548;
+const app = express();
+const port = 5000;
 
-server.use(express.json());
-server.use('pizza',PizzaController)
+app.use(cors());
+app.use(express.json());
 
-server.listen(puerto, () => {
-    console.log(`This is a server on the port ${puerto}`);
-})
+app.use("/pizza", PizzaRouter);
 
-console.log(server);
-
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
